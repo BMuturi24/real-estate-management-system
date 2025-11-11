@@ -12,7 +12,16 @@ class User(AbstractUser):
         verbose_name='groups'
     )
 
-    user_permissions = models.ManyToManyField(
+class Account(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=20)
+
+class Account(AbstractUser):
+    phone = models.CharField(max_length=20, blank=True)
+
+    
+user_permissions = models.ManyToManyField(
         Permission,
         related_name='custom_user_permissions_set',  # avoids clashes
         blank=True,
@@ -20,5 +29,5 @@ class User(AbstractUser):
         verbose_name='user permissions'
     )
 
-    def __str__(self):
+def __str__(self):
         return self.username
