@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Properties</title>
+</head>
+<body>
+    <h1>Properties Section</h1>
+    <p>Manage property details here.</p>
+
+    <h2>Properties</h2>
+<ul>
+  {% for prop in properties %}
+    <li>{{ prop.name }} - {{ prop.type }} - {{ prop.price }}</li>
+  {% endfor %}
+</ul>
+<a href="/listings/">Go to Listings</a>
+    <a href="/">Back to Home</a>
+</body>
+</html>
