@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listings</title>
+</head>
+<body>
+    <h1>Listings Section</h1>
+    <p>Manage property listings here.</p>
+    <h2>Listings</h2>
+<ul>
+  {% for listing in listings %}
+    <li>{{ listing.title }} - {{ listing.status }} - {{ listing.price }}</li>
+  {% endfor %}
+</ul>
+<a href="/properties/">Go to Properties</a>
+<a href="/accounts/">Go to Accounts</a>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
